@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Portfolio</title>
+
+        <style>
+            /* Reset */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+
+            }
+
+            /* Base */
+            body {
+                font-family: 'Segoe UI', sans-serif;
+                background: #0f0f0f;
+                color: #e0e0e0;
+                line-height: 1.7;
+            }
+
+            /* Navigation */
+            nav {
+                display: flex;
+                justify-content: space-between;   /* logo ←→ links */         
+                align-items: center;    /* vertically centred */            
+                padding: 20px 40px; 
+                background: #1a1a1a; 
+                position: sticky;
+                top: 0;
+            }
+
+            /* Logo — left side */
+            .logo {
+                font-size: 20px;
+                font-weight: 700;
+                color: #7c6df0;
+            }
+
+            /* Links container — right side, links sit side by side */
+            .nav-links {
+                display: flex;      /* makes the three links sit in a row */
+                gap: 30px;          /* 30px space between each link */
+            }
+
+            /* Individual links */
+            .nav-links a {
+                color: #e0e0e0;
+                text-decoration: none;
+                font-size: 15px;
+            }
+
+            .nav-links a:hover {
+                color: #7c6df0;
+            }
+
+           /* nav a {
+                color: #e0e0e0;
+                text-decoration: none;
+                font-size: 15px;
+            }
+
+            nav a:hover {
+                color: #7c6df0;
+            } */
+
+            /* Sections */
+            section {
+                padding: 80px 40px;
+            }
+
+            /* Hero */
+            #about h1 {
+                font-size: 48px;
+                font-weight: 700;
+                margin-bottom: 12px;
+                color: #ffffff;
+            }
+
+            #about h2 {
+                font-size: 22px;
+                font-weight: 400;
+                margin-bottom: 20px;
+                color: #7c6df0;
+            }
+
+            #about p {
+                font-size: 16px;
+                margin-bottom: 30px;
+                color: #aaa;
+            }
+
+            #about a {
+                display: inline-block;
+                padding: 12px 28px;
+                background: #7c6df0;
+                color: #fff;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+            #about a:hover {
+                background: #6a5cdb;
+            }
+
+            /* Projects */
+            #projects {
+                background: #141414;
+            }
+
+            #projects h2 {
+                font-size: 32px;
+                color: #fff;
+                margin-bottom: 24px;
+            }
+
+            #projects ul {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            #projects li {
+                background: #1e1e1e;
+                border: 1px solid #2a2a2a;
+                border-radius: 10px;
+                padding: 20px 24px;
+                color: #ccc;
+                font-size: 15px;
+            }
+
+            /* Contact */
+            #contact {
+                background: #0f0f0f;
+            }
+
+            #contact h2 {
+                font-size: 32px;
+                color: #fff;
+                margin-bottom: 16px;
+            }
+
+            #contact p {
+                color: #aaa;
+                font-size: 16px;
+            }
+
+            #contact a {
+                color: #7c6df0;
+                text-decoration: none;
+            }
+
+            #contact a:hover {
+                text-decoration: underline;
+            }
+
+           /* Dark / Light mode toggle*/
+            #theme-btn {
+                background: transparent;
+                border: 1px solid #7c6df0;
+                color: #e0e0e0;
+                padding: 6px 16px;
+                border-radius: 20px;
+                cursor: pointer;
+                font-size: 13px;
+            }
+
+           /* ── Light mode ── */
+                body.light {
+                background: #f0f4ff;
+                color: #111111;
+                }
+
+                body.light nav {
+                background: #ffffff;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+                }
+
+                body.light .logo {
+                color: #5a4fcf;
+                }
+
+                body.light .nav-links a {
+                color: #333333;
+                }
+
+                body.light .nav-links a:hover {
+                color: #5a4fcf;
+                }
+
+                body.light #theme-btn {
+                border-color: #5a4fcf;
+                color: #333333;
+                }
+
+                body.light #about {
+                background: #f0f4ff;
+                }
+
+                body.light #about h1 {
+                color: #111111;
+                }
+
+                body.light #about h2 {
+                color: #5a4fcf;
+                }
+
+                body.light #about p {
+                color: #444444;
+                }
+
+                body.light #projects {
+                background: #e8edf8;
+                }
+
+                body.light #projects h2 {
+                color: #111111;
+                }
+
+                body.light #projects li {
+                background: #ffffff;
+                border-color: #d0d7f0;
+                color: #333333;
+                }
+
+                body.light #contact {
+                background: #f0f4ff;
+                }
+
+                body.light #contact h2 {
+                color: #111111;
+                }
+
+                body.light #contact p {
+                color: #444444;
+                }
+
+                body.light #contact a {
+                color: #5a4fcf;
+                }
+
+        </style>
+
+    </head>
+    <body>
+        <!-- Navigation -->
+         <nav>
+            <!-- Left Side -->
+             <div class="logo">Aquib.dev</div>
+
+            <!-- Right Side -->
+             <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+             </div>
+             <button id="theme-btn">☀️ Light</button> <!--Dark / Light mode toggle -->
+            
+         </nav>
+
+         <!-- Hero Section -->
+          <section id="about">
+            <h1>Hi, I'm Mohammad Aquib</h1>
+            <h2>Aspiring AI Developer</h2>
+            <p>I'm learning full stack developent to start my journey</p>
+            <a href="#contact">Get in touch</a>
+          </section>
+
+          <!-- Projects Section -->
+           <section id="projects">
+            <h2>My Projects</h2>
+            <ul>
+                <li>Portfolio Website</li>
+                <li>Data Analysis</li>
+            </ul>
+           </section>
+
+           <!-- Contact Section -->
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <p>Email: <a href="mailto:aquib.aadee@gmail.com">aquib.aadee@gmail.com</a></p>
+            </section>
+
+            <!-- Java Script Communicator -->
+            <script src="script.js"></script>
+    </body>
+</html>

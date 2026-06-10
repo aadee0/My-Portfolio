@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0" /> 
+        <title>Practice Site</title>
+
+        <style>
+            /*margin*/
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* body*/
+            body {
+                font-family: 'Courier New', Courier, monospace;
+                background: black;
+                color: white;
+                line-height: 1.8;
+            }
+
+            /* Nav */
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 40px;
+                background: #1a1a1a;
+                position: sticky;
+                top: 0;
+            }
+
+            /* logo */
+            .logo {
+                font-size: 20px;
+                font-weight: 900;
+                color: #0d9488;
+            }
+
+            /* nav-links */
+            .nav-links {
+                display: flex;
+                gap: 20px;
+            }
+
+            /* Individual link style */
+            .nav-links a {
+                color: #e0e0e0;
+                text-decoration: none;
+                font-size: 15px;
+            }
+
+            .nav-links a:hover {
+                color: #0d9488;
+                
+            }
+
+            /* Sections Style */
+            section {
+                padding: 80px 40px;
+            }
+
+            /* Hero */
+            #home {
+                background: #0d0d0d;
+            }
+
+            #home h1 {
+                font-size: 46px;
+                font-weight: 700;
+                margin-bottom: 10px;
+                color: #ffffff;
+            }
+
+            #home h2 {
+                font-size: 20px;
+                font-weight: 400;
+                margin-bottom: 10px;
+                color: #ffffff;
+            }
+
+            #home p {
+                font-size: 20px;
+                font-weight: 400;
+                margin-bottom: 10px;
+                color: #ffffff;
+            }
+
+            /* About */
+            #about {
+                background: #0b0b0b;
+            }
+            #about h2 {
+                font-size: 20px;
+                font-weight: 600;
+                color: #ffffff;
+                margin-bottom: 10px;
+            }
+
+            #about p {
+                font-size: 18px;
+                font-weight: 400;
+                margin-bottom: 10px;
+                color: #ffffff;
+            }
+
+            #about ol {
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+            }
+
+            #about li {
+                background: #1e1e1e;
+                border: 1px solid #2a2a2a;
+                border-radius: 8px;
+                padding: 8px 24px;
+                color: #ccc;
+                font-size: 15px;
+            }
+
+            /* Work */
+            #work {
+                background: #0d0d0d;
+            }
+
+            #work h2 {
+                font-size: 20px;
+                font-weight: 600;
+                color: #ffffff;
+                margin-bottom: 10px;
+            }
+
+            #work p {
+                font-size: 18px;
+                font-weight: 400;
+                margin-bottom: 10px;
+                color: #ffffff;
+            }
+
+            #work ul {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            #work li {
+                background: #1e1e1e;
+                border: 1px solid #2a2a2a;
+                border-radius: 5px;
+                padding: 8px 10px;
+                font-weight: 500;
+                color: #ccc;
+                font-size: 15px;
+            }
+
+            /* Contact */
+            #contact {
+                background: #0b0b0b;
+            }
+
+            #contact h2 {
+                font-size: 20px;
+                font-weight: 600;
+                color: #ffffff;
+                margin-bottom: 10px;
+            }
+
+            #contact p {
+                font-size: 15px;
+                font-weight: 400;
+                color: #ffffff;
+                margin-bottom: 10px;
+            }
+
+            #contact a {
+                color: #0d9488;
+                text-decoration: none;
+            }
+
+            #contact a:hover {
+                text-decoration: underline;
+            }
+
+            /* Light mode button settings */
+            #mode-btn {
+                background: #ffffff;
+                display: flex;
+                border: 1px solid #0d9488;
+                padding: 6px 4px;
+                border-radius: 15px;
+                cursor: pointer;
+                font-size: 12px;
+                font-weight: 500;
+            }
+
+            /* Light Mode full page settings */
+            body.light {
+                background: #e0e0e0;
+                color: #111111;
+            }
+
+            body.light nav {
+                background: #0A1828;
+                box-shadow: 0 2px 1px rgba(0, 0, 0, 0.08);
+            }
+
+            body.light .logo {
+                color: #0FFCBE;    
+                font-weight: 900;           
+            }
+
+            body.light .nav-links a {
+                color: #ffffff;
+                font-weight: 600;   
+            }
+
+            body.light .nav-links a:hover {
+                color: #0FFCBE;                 
+            }
+
+            body.light #mode-btn {
+                border-color: #0FFCBE;
+                background: #2a2a2a;
+                color: #ccc;
+                padding: 6px 4px;
+            }
+
+            body.light #mode-btn:hover {
+                color: #0FFCBE;
+            }
+
+            body.light #home {
+                background:#0A1828;
+            }
+
+            body.light #home h1 {
+                color: #BFA181;
+            }
+
+            body.light #home h2 {
+                color: #178582;
+            }
+
+            body.light #about {
+                background: #0A1828;
+            }
+            
+            body.light #about h2 {
+                color: #178582;
+            }
+
+             body.light #about li {
+                background: #6b550c;
+                color: #ffffff;
+            }
+
+            body.light #work {
+                background: #0A1828;
+            }
+
+             body.light #work h2 {
+                color: #178582;
+            }
+
+             body.light #work li {
+                background: #6b550c;
+                color: #ffffff;
+            }
+            
+            body.light #contact {
+                background: #0A1828;
+            }
+
+            body.light #contact h2 {
+                color: #BFA181;
+            }
+
+            body.light #work p {
+                color: #178582;
+            }
+
+
+
+        </style>
+
+    </head>
+    
+    <body>
+        <!-- Nav Bar-->
+         <nav>
+            
+            <!-- logo -->
+             <div class="logo">PRACTICE</div>
+
+             <!-- nav links -->
+              <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+              </div>
+
+              <button id="mode-btn">💡Light Mode</button>
+         </nav>
+
+         <!-- Hero Section -->
+         <section id="home">
+            <h1>This is my practice time</h1>
+            <h2>I want to learn full stack development</h2>
+            <p>This is my only oppotunity to learn and get out of the weekness or the trap I'm living in.</p>
+         </section>
+
+         <!-- About -->
+         <section id="about">
+            <h2>I'm an Aadeez</h2>
+            <p>Aadeez is a renowned fanbase of the superstart Atif Aslam.</p>
+            <h2>Goals</h2>
+            <ol>
+                <li>Being Human</li>
+                <li>Learning</li>
+                <li>Peace & Love</li>
+            </ol>
+         </section>
+
+         <!-- Work -->
+         <section id="work">
+            <h2>I'm an aspiring AI engineer</h2>
+            <p>Working full time as QA but wanna grow carrier with development</p>
+            <h2>Skills</h2>
+            <ul>
+                <li>Programming</li>
+                <li>Singing</li>
+                <li>Teacher</li>
+            </ul>
+         </section>
+
+         <!-- Contact -->
+         <section id="contact">
+            <h2>Contact me for more details</h2>
+            <p>Visit <a href="https://aadeez.com/" target="_blank">Atif Aslam's website</a> for more details</p>
+            <p>Email us: <a href="mailto:atif.aslam@aadeez.com">atif.aslam@aadeez.com</a></p>
+         </section>
+
+         <script src="practice.js"></script>
+    </body>
+
+</html>
